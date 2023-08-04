@@ -1,0 +1,188 @@
+
+
+
+
+Privacy Pass                                                     W. Ladd
+Internet-Draft                                       Akamai Technologies
+Intended status: Informational                             4 August 2023
+Expires: 5 February 2024
+
+
+                          BBS for PrivacyPass
+                   draft-ladd-privacypass-bbs-latest
+
+Abstract
+
+   Existing token types in privacy pass conflate attribution with rate
+   limiting.  This document describes a token type where the issuer
+   attests to a set of properties of the client, which the client can
+   then selectively prove to the origin.  Repeated showings of the same
+   credential are unlinkable, unlike other token types in privacy pass.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://wbl.github.io/draft-ladd-bbs-privacypass/draft-ladd-
+   privacypass-bbs.html.  Status information for this document may be
+   found at https://datatracker.ietf.org/doc/draft-ladd-privacypass-
+   bbs/.
+
+   Discussion of this document takes place on the Privacy Pass Working
+   Group mailing list (mailto:privacy-pass@ietf.org), which is archived
+   at https://mailarchive.ietf.org/arch/browse/privacy-pass/.  Subscribe
+   at https://www.ietf.org/mailman/listinfo/privacy-pass/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/wbl/draft-ladd-bbs-privacypass.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 5 February 2024.
+
+Copyright Notice
+
+   Copyright (c) 2023 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Definitions
+   3.  Protcol Overview
+     3.1.  Issuance
+     3.2.  Redemption
+   4.  Privacy Pass integration
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
+   Acknowledgments
+   Author's Address
+
+1.  Introduction
+
+   In 2004 Boneh-Boyen-Shacham introduced the eponymous BBS signature.
+   The BBS signature scheme as documented in [BBS] lets a signer sign a
+   sequence of strings called attributes, and provides a way for a
+   holder of a signature to prove possession and the value of some of
+   the attributes.  This document explains how to use this technology
+   with privacy pass.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+3.  Protcol Overview
+
+   To run this protocol the Issuer must have a public key and an
+   issuance URL, as well as a common understanding of the meaning of
+   each attribute string (sequence of octets).  E.g an age might be
+   encoded as a single octet, or in ASCII numeric base 10
+   represnetation, or a fixed field, and could be the first attribute in
+   the list.
+
+3.1.  Issuance
+
+   The Client begins by forming a sequence of strings corresponding to
+   the attributes they wish signed.  They engage in the Attestation
+   protocol with the Attestor, and then send the serialized array of
+   strings as JSON array of base64 encoded strings to the Issuer.  The
+   Issuer returns the signature, again encoded in base64.  The Client
+   MUST verify the returned signature.
+
+   The Attestor interaction and validation of the attributes is not
+   specified here.  In a split instantiation as per [PPARCH], Attestors
+   and Issuers MUST ensure that the claims by the Client are not
+   changeable between attestation and signing.
+
+3.2.  Redemption
+
+   For a client to show a set of attributes they execute the ProofGen
+   operation of [BBS] with the header set to a specified channel binding
+   or origin identifer.  For HTTP applications it is RECOMMENDED that
+   the origin be used.  The set of attributes they wish to show is
+   communicated by means outside this draft.  They then transmit the
+   signature to the origin as a token.
+
+4.  Privacy Pass integration
+
+   In [PPARCH] parameters are provided that any instantiation must
+   amend.  TODO: put values in
+
+5.  Security Considerations
+
+   The position of a revealed attribute, as well as the number of
+   unrevealed attributes, is revealed to the origin.  Applications MUST
+   ensure all clients recieve the same set of attributes in the same
+   positions.  As the redeemed tokens are not single use, instantiations
+   MUST specify a channel binding to use or origin identifier.
+
+6.  IANA Considerations
+
+   This document has no IANA actions.
+
+7.  References
+
+7.1.  Normative References
+
+   [BBS]      Looker, T., Kalos, V., Whitehead, A., and M. Lodder, "The
+              BBS Signature Scheme", Work in Progress, Internet-Draft,
+              draft-irtf-cfrg-bbs-signatures-03, 10 July 2023,
+              <https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-
+              bbs-signatures-03>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+7.2.  Informative References
+
+   [PPARCH]   Davidson, A., Iyengar, J., and C. A. Wood, "The Privacy
+              Pass Architecture", Work in Progress, Internet-Draft,
+              draft-ietf-privacypass-architecture-13, 15 June 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-
+              privacypass-architecture-13>.
+
+Acknowledgments
+
+   TODO acknowledge.
+
+Author's Address
+
+   Watson Ladd
+   Akamai Technologies
+   Email: watsonbladd@gmail.com
