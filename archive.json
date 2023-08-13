@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-10T00:52:27.578877+00:00",
+  "timestamp": "2023-08-13T00:43:38.238391+00:00",
   "repo": "wbl/draft-ladd-bbs-privacypass",
   "labels": [
     {
@@ -150,26 +150,49 @@
       "id": "PR_kwDOKDNA-c5XWjyu",
       "title": "HTTP based protocol",
       "url": "https://github.com/wbl/draft-ladd-bbs-privacypass/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "BasileiosKal",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "First stamp in an HTTP based Issuance and redemption protocol.\r\n\r\nUsing public metadata to provide the Origin with a way to check the token's \"freshness\".\r\n\r\nNot sure if this document is the correct place for this?? Would be interested in peoples thoughts regardless! It could help with some decisions later (like #1).",
       "createdAt": "2023-08-07T15:57:35Z",
-      "updatedAt": "2023-08-07T16:00:09Z",
+      "updatedAt": "2023-08-11T18:35:55Z",
       "baseRepository": "wbl/draft-ladd-bbs-privacypass",
       "baseRefName": "main",
       "baseRefOid": "1aaeb25a45083e46a2aa7f8548ce2cf2ab6fd8ba",
       "headRepository": "wbl/draft-ladd-bbs-privacypass",
       "headRefName": "vasilis/protocol",
       "headRefOid": "09f4ff33c426e122cef61bf55491d1d6bdb63b18",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-08-11T18:35:54Z",
+      "mergedAt": "2023-08-11T18:35:54Z",
+      "mergedBy": "wbl",
+      "mergeCommit": {
+        "oid": "db1b5c0c2ce89e2072cec6f4455685ed0af2da6b"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKDNA-c5dUnJJ",
+          "commit": {
+            "abbreviatedOid": "09f4ff3"
+          },
+          "author": "wbl",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Let's merge this and keep working. I think we're close.",
+          "createdAt": "2023-08-07T16:00:09Z",
+          "updatedAt": "2023-08-11T18:34:48Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "How does this work with the rest of the document and the architecture? Seems to me if we put this in we should remove some other text for clarity that's more generic.",
+              "createdAt": "2023-08-07T16:00:09Z",
+              "updatedAt": "2023-08-11T18:34:48Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
