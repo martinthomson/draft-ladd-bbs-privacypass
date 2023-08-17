@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-15T00:41:41.468053+00:00",
+  "timestamp": "2023-08-17T00:40:47.931133+00:00",
   "repo": "wbl/draft-ladd-bbs-privacypass",
   "labels": [
     {
@@ -282,26 +282,42 @@
       "id": "PR_kwDOKDNA-c5X7OMW",
       "title": "Update draft-ladd-privacypass-bbs.md",
       "url": "https://github.com/wbl/draft-ladd-bbs-privacypass/pull/6",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "wbl",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "* Clean up some todos\r\n* Specify encoding into Extensions, this might need revision",
       "createdAt": "2023-08-14T21:43:29Z",
-      "updatedAt": "2023-08-14T21:43:31Z",
+      "updatedAt": "2023-08-15T17:04:48Z",
       "baseRepository": "wbl/draft-ladd-bbs-privacypass",
       "baseRefName": "main",
       "baseRefOid": "29b6f4b0b2157a3b6568c9b9f10a0f29e82cda9f",
       "headRepository": "wbl/draft-ladd-bbs-privacypass",
       "headRefName": "wbl-patch-1",
-      "headRefOid": "479ce9eb20b1a5e9a625e7b46b949cd14aa52991",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "c44195323240e66f53043de8bec6cad90ccb6eab",
+      "closedAt": "2023-08-15T17:04:48Z",
+      "mergedAt": "2023-08-15T17:04:48Z",
+      "mergedBy": "wbl",
+      "mergeCommit": {
+        "oid": "09350ad0e41a9ba174fcac079b0e145686c6cc0c"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOKDNA-c5eHf9E",
+          "commit": {
+            "abbreviatedOid": "479ce9e"
+          },
+          "author": "BasileiosKal",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "LGTM",
+          "createdAt": "2023-08-15T17:01:49Z",
+          "updatedAt": "2023-08-15T17:01:49Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
