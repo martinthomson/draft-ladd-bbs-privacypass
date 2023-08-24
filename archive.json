@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-17T00:40:47.931133+00:00",
+  "timestamp": "2023-08-24T00:41:32.651728+00:00",
   "repo": "wbl/draft-ladd-bbs-privacypass",
   "labels": [
     {
@@ -98,9 +98,9 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
-      "body": "My guess is that the Client can't just send the challenge to the Issuer?? If yes, there is nothing binding a specific challenge to the BBS signature. As a result, the Origin can't \"force\" the Client to get a \"fresh\" token.\r\n\r\nSome options that come to mind:\r\n-  Use public metadata with a low-accuracy expiration or issuance date?? (like in PR #2).\r\n-  Use [blind BBS signatures](https://identity.foundation/bbs-signature/draft-blind-bbs-signatures.html), where the Client \"commits\" to the challenge during issuance (similar to how blind RSA works).\r\n\r\nThe blind BBS signatures document is out of date rn. If it's updated, should it be used instead of the core BBS protocol??",
+      "body": "My guess is that the Client can't just send the challenge to the Issuer?? If yes, there is nothing binding a specific challenge to the BBS signature (rn the proofs are bound to the challenge). As a result, the Origin can't \"force\" the Client to get a \"fresh\" token.\r\n\r\nSome options that come to mind:\r\n-  Use public metadata with a low-accuracy expiration or issuance date?? (like in PR #2).\r\n-  Use [blind BBS signatures](https://identity.foundation/bbs-signature/draft-blind-bbs-signatures.html), where the Client \"commits\" to the challenge during issuance (similar to how blind RSA works).\r\n\r\nThe blind BBS signatures document is out of date rn. If it's updated, should it be used instead of the core BBS protocol??",
       "createdAt": "2023-08-07T16:04:05Z",
-      "updatedAt": "2023-08-07T16:34:05Z",
+      "updatedAt": "2023-08-23T08:13:52Z",
       "closedAt": null,
       "comments": [
         {
@@ -163,6 +163,22 @@
           "updatedAt": "2023-08-14T14:37:27Z"
         }
       ]
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOKDNA-c5u-C0v",
+      "title": "Fix token type",
+      "url": "https://github.com/wbl/draft-ladd-bbs-privacypass/issues/7",
+      "state": "OPEN",
+      "author": "tfpauly",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The draft is claiming token type = 3, which is already allocated by the adopted rate-limited draft (which also allocates 4):\r\nhttps://www.ietf.org/archive/id/draft-ietf-privacypass-rate-limit-tokens-02.html#name-iana-considerations\r\n\r\nPlease use a different value that isn't already allocated, and please add IANA Considerations to correctly describe how this would be registered!\r\n\r\n@wbl ",
+      "createdAt": "2023-08-22T15:58:33Z",
+      "updatedAt": "2023-08-22T15:58:33Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
