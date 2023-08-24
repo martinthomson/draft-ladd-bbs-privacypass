@@ -280,7 +280,7 @@ Table of Contents
    successful, yield the extensions array.  Then, they must sign those
    extensions, using the following steps:
 
-   header = 0x0003
+   header = 0xTBD
    signature = Sign(skI, pkI,  header, extensions)
 
    The Sign function is defined in Section 3.4.1
@@ -311,7 +311,7 @@ Table of Contents
    signature value. the Client MUST validate the produced signature as
    follows:
 
-   result = Verify(pkI, signature, 0x0003, extensions)
+   result = Verify(pkI, signature, 0xTBD, extensions)
 
    The Verify function is defined in Section 3.4.2
    (https://www.ietf.org/archive/id/draft-irtf-cfrg-bbs-signatures-
@@ -358,7 +358,7 @@ Table of Contents
 
    nonce = random(32)
    challenge_digest = SHA256(challenge)
-   header = 0x0003
+   header = 0xTBD
    presentation_header = concat(nonce, challenge_digest)
 
    authenticator = ProofGen(pkI,
@@ -398,7 +398,7 @@ Table of Contents
    value.  The Origin can verify the Token and corresponding disclosed
    extensions as follows:
 
-   header = 0x0003
+   header = 0xTBD
    presentation_header = concat(Token.nonce, Token.challenge_digest)
 
    res = ProofVerify(pkI,
