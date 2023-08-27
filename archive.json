@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-24T00:41:32.651728+00:00",
+  "timestamp": "2023-08-27T00:44:56.219336+00:00",
   "repo": "wbl/draft-ladd-bbs-privacypass",
   "labels": [
     {
@@ -176,9 +176,17 @@
       "labels": [],
       "body": "The draft is claiming token type = 3, which is already allocated by the adopted rate-limited draft (which also allocates 4):\r\nhttps://www.ietf.org/archive/id/draft-ietf-privacypass-rate-limit-tokens-02.html#name-iana-considerations\r\n\r\nPlease use a different value that isn't already allocated, and please add IANA Considerations to correctly describe how this would be registered!\r\n\r\n@wbl ",
       "createdAt": "2023-08-22T15:58:33Z",
-      "updatedAt": "2023-08-22T15:58:33Z",
+      "updatedAt": "2023-08-24T17:31:35Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "wbl",
+          "authorAssociation": "OWNER",
+          "body": "I've opened a PR, they likely need some tweaking.",
+          "createdAt": "2023-08-24T17:31:34Z",
+          "updatedAt": "2023-08-24T17:31:34Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -331,6 +339,59 @@
           "body": "LGTM",
           "createdAt": "2023-08-15T17:01:49Z",
           "updatedAt": "2023-08-15T17:01:49Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOKDNA-c5Yt77C",
+      "title": "Update draft-ladd-privacypass-bbs.md",
+      "url": "https://github.com/wbl/draft-ladd-bbs-privacypass/pull/8",
+      "state": "OPEN",
+      "author": "wbl",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Solves Issue #7 ",
+      "createdAt": "2023-08-24T17:31:00Z",
+      "updatedAt": "2023-08-24T17:54:40Z",
+      "baseRepository": "wbl/draft-ladd-bbs-privacypass",
+      "baseRefName": "main",
+      "baseRefOid": "09350ad0e41a9ba174fcac079b0e145686c6cc0c",
+      "headRepository": "wbl/draft-ladd-bbs-privacypass",
+      "headRefName": "iana-fixes",
+      "headRefOid": "d33ab91310c691dc884551f37274360d5311ce76",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKDNA-c5fBK06",
+          "commit": {
+            "abbreviatedOid": "7293d1c"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "NONE",
+          "state": "CHANGES_REQUESTED",
+          "body": "Thanks! Clearly some things as TODO, but that's OK. The main thing is to not stomp on type 3 =) \r\n\r\nThere are several other places where `0x0003` is used. Can you fix all of those?",
+          "createdAt": "2023-08-24T17:44:18Z",
+          "updatedAt": "2023-08-24T17:44:18Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKDNA-c5fBOvy",
+          "commit": {
+            "abbreviatedOid": "d33ab91"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-08-24T17:54:40Z",
+          "updatedAt": "2023-08-24T17:54:40Z",
           "comments": []
         }
       ]
