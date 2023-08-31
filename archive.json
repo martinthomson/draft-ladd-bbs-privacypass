@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-27T00:44:56.219336+00:00",
+  "timestamp": "2023-08-31T00:42:54.445786+00:00",
   "repo": "wbl/draft-ladd-bbs-privacypass",
   "labels": [
     {
@@ -355,7 +355,7 @@
       "labels": [],
       "body": "Solves Issue #7 ",
       "createdAt": "2023-08-24T17:31:00Z",
-      "updatedAt": "2023-08-24T17:54:40Z",
+      "updatedAt": "2023-08-29T07:53:36Z",
       "baseRepository": "wbl/draft-ladd-bbs-privacypass",
       "baseRefName": "main",
       "baseRefOid": "09350ad0e41a9ba174fcac079b0e145686c6cc0c",
@@ -393,6 +393,26 @@
           "createdAt": "2023-08-24T17:54:40Z",
           "updatedAt": "2023-08-24T17:54:40Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOKDNA-c5fWh2W",
+          "commit": {
+            "abbreviatedOid": "d33ab91"
+          },
+          "author": "BasileiosKal",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "LGTM! Thank you!",
+          "createdAt": "2023-08-29T07:53:01Z",
+          "updatedAt": "2023-08-29T07:53:36Z",
+          "comments": [
+            {
+              "originalPosition": 70,
+              "body": "We need to add the Issuer configuration details to remove this TODO, but I do believe it will be 32 as well.",
+              "createdAt": "2023-08-29T07:53:02Z",
+              "updatedAt": "2023-08-29T07:53:36Z"
+            }
+          ]
         }
       ]
     }
