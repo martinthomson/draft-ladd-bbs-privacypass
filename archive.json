@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-31T00:42:54.445786+00:00",
+  "timestamp": "2023-09-03T00:45:12.106080+00:00",
   "repo": "wbl/draft-ladd-bbs-privacypass",
   "labels": [
     {
@@ -348,24 +348,26 @@
       "id": "PR_kwDOKDNA-c5Yt77C",
       "title": "Update draft-ladd-privacypass-bbs.md",
       "url": "https://github.com/wbl/draft-ladd-bbs-privacypass/pull/8",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "wbl",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Solves Issue #7 ",
       "createdAt": "2023-08-24T17:31:00Z",
-      "updatedAt": "2023-08-29T07:53:36Z",
+      "updatedAt": "2023-09-01T14:42:31Z",
       "baseRepository": "wbl/draft-ladd-bbs-privacypass",
       "baseRefName": "main",
       "baseRefOid": "09350ad0e41a9ba174fcac079b0e145686c6cc0c",
       "headRepository": "wbl/draft-ladd-bbs-privacypass",
       "headRefName": "iana-fixes",
       "headRefOid": "d33ab91310c691dc884551f37274360d5311ce76",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-09-01T14:42:31Z",
+      "mergedAt": "2023-09-01T14:42:31Z",
+      "mergedBy": "BasileiosKal",
+      "mergeCommit": {
+        "oid": "909ac63852c0e5171aa683c73388d2cd296ec604"
+      },
       "comments": [],
       "reviews": [
         {
